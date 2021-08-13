@@ -1,0 +1,17 @@
+<p>product-list works!</p>
+<div *ngFor="let product of products">
+   <h3>
+    <a [title]=  "product.name + 'details'" [routerLink]="['/products', product.id]">  {{product.name}} </a>
+   </h3>
+
+   <p *ngIf="product.description">{{product.description}}</p>
+
+   <button (click)="share()">share</button>
+   <!-- Pass data to a child component
+     pass data to chaild class or pass data from this component to product alert component  using   [product]="product"
+        Pass data to a parent from chaild component
+     using (notify)="OnNotify()"-->
+   <app-product-alerts 
+     [product]="product"
+     (notify)="OnNotify()"></app-product-alerts>
+</div>
