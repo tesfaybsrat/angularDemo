@@ -1,9 +1,8 @@
-<p>product-details works!</p>
-
-<div *ngIf ="product">
-   <h3>{{product.name}}</h3>
-   <h3>{{product.price | currency}}</h3>
-   <h3>{{product.description}}</h3>
-
-   <button (click)="addToCart(product)">Buy</button>
-</div>
+<div class="card" *ngIf="product">
+   <h5 class="card-header">{{product.name}}</h5>
+   <div class="card-body">
+     <h5 class="card-title">{{product.price | currency}}</h5>
+     <p class="card-text">{{product.description}}</p>
+     <button (click)="addToCart(product)" type="button" class="btn btn-primary">Buy</button>
+   </div>
+ </div>
